@@ -17,16 +17,11 @@ namespace Money_to_text
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private static string MoneyToText(int number)
         {
-            string Words = "";
-
             if (number == 0) return "zero";
+
+            string Words = "";
 
             if ((number / 1000000) > 0)
                 Words += MoneyToText(number / 1000000) + " million ";
@@ -45,19 +40,19 @@ namespace Money_to_text
                 var unitsMap = new[] { "zero", "one","two", "three", "four", "five", "six","seven","eight", "nine", "ten","eleven","twelve","thirteen", "fourteen", "fifteen","sixteen","seventeen","eighteen","nineteen" };
                 var tensmap = new[] { "zero", "ten", "twenty", "thirty", "forty", "fifty","sixty", "seventy", "eighty", "ninety"};
                 
-                if (number < 20)
+                if (/*number>0 &&*/ number < 20)
                 {
                     Words += unitsMap[number];
                 }
                  else
                 {
                     Words += tensmap[number / 10];
-                if (number % 10 > 0)
-                    Words += " " + unitsMap[number % 10];
+                    if ((number % 10) > 0)
+                {
+                        Words += "" + unitsMap[number % 10];
                 }
 
-
-
+                }
 
             return Words;
         }
@@ -65,11 +60,6 @@ namespace Money_to_text
         private void convert_Click(object sender, EventArgs e)
         {
             TextConvert.Text = MoneyToText(int.Parse(MoneyIN.Text));
-        }
-
-        private void MoneyIN_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

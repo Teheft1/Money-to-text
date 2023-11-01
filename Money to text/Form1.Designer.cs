@@ -39,7 +39,6 @@
             this.MoneyIN.Name = "MoneyIN";
             this.MoneyIN.Size = new System.Drawing.Size(100, 20);
             this.MoneyIN.TabIndex = 0;
-            this.MoneyIN.TextChanged += new System.EventHandler(this.MoneyIN_TextChanged);
             // 
             // TextConvert
             // 
@@ -69,7 +68,6 @@
             this.Controls.Add(this.MoneyIN);
             this.Name = "Form1";
             this.Text = "Money To Text Convert";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
