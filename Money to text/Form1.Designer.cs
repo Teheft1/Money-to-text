@@ -53,7 +53,7 @@
             this.Convert.Name = "Convert";
             this.Convert.Size = new System.Drawing.Size(75, 23);
             this.Convert.TabIndex = 2;
-            this.Convert.Text = "button1";
+            this.Convert.Text = "Convert";
             this.Convert.UseVisualStyleBackColor = true;
             this.Convert.Click += new System.EventHandler(this.convert_Click);
             // 
